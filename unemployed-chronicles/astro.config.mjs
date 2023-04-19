@@ -1,8 +1,22 @@
 import { defineConfig } from 'astro/config';
-
 import tailwind from "@astrojs/tailwind";
+import vue from "@astrojs/vue";
+import storyblok from "@storyblok/astro";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
+  integrations: [
+    tailwind(), 
+    vue(),
+    storyblok({
+      accessToken: process.env.STORYBLOK_TOKEN,
+      components: {
+        // Add Storyblok Components Here
+      },
+      apiOptions: {
+        // Choose Storyblok Space Region
+        region: 'us',
+      }
+    })
+  ]
 });
