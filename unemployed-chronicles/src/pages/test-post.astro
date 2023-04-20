@@ -10,4 +10,9 @@ const { data } = await storyblokApi.get("cdn/stories/test-post", {
 
 const content = data.story.content;
 ---
-<StoryblokComponent blok={content} />
+<div class="h-screen bg-slate-200">
+    <div class="p-14 mx-auto">
+        <StoryblokComponent blok={content} />
+
+    </div>
+</div>
