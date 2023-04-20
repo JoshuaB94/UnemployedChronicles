@@ -2,6 +2,6 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "jsx": "preserve",
-    "ignoreDeprecations": "5.0",
+    // "ignoreDeprecations": "5.0",
   }
 }
