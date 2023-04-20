@@ -2,6 +2,9 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import vue from "@astrojs/vue";
 import storyblok from "@storyblok/astro";
+import { loadEnv } from 'vite';
+
+const env = loadEnv("", process.cwd(), 'STORYBLOK');
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,7 +12,7 @@ export default defineConfig({
     tailwind(), 
     vue(),
     storyblok({
-      accessToken: process.env.STORYBLOK_TOKEN,
+      accessToken: env.STORYBLOK_TOKEN,
       components: {
         blogPost: 'storyblok/BlogPost',
       },
